@@ -13,6 +13,7 @@ def login(cpf, password):
     result = session.post('https://www.meualelo.com.br/meualelo.services/rest/login/authenticate', json={
         'cpf': cpf,
         'pwd': base64.b64encode(password),
+        'captchaResponse': '',
     })
     if result.status_code != 200:
         raise WebApiFailure()
