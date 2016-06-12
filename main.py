@@ -36,7 +36,7 @@ def save_if_necessary(preferences):
 def load_preferences():
     preferences = config.read()
     preferences['month'] = None
-    preferences['card'] = int(preferences['card'])
+    preferences['card'] = int(preferences.get('card', 0))
     preferences['save'] = False
     return preferences
 
