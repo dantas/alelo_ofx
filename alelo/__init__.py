@@ -28,7 +28,7 @@ def fetch_transactions(cpf, password, card_number, month):
 
 
 def _fetch_card_id(card_number):
-    return json.loads(webapi.credentials())['products'][0]['cards'][card_number]['cardId']
+    return json.loads(webapi.credentials())['products'][card_number]['cards'][0]['cardId']
 
 
 regex_amount = re.compile(".*R\$\s*(.*)")
